@@ -1,0 +1,4 @@
+
+
+#validation new booking using rignt join and where condition
+#check new case update  status using inner join and where condition

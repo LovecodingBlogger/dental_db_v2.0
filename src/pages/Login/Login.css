@@ -1,0 +1,26 @@
+@media all and (min-width: 100px) {
+    .Login {
+      padding: 60px 0;
+      background-color: #f1f1f1;
+    }
+  
+    .Login form {
+      margin: 0 auto;
+      max-width: 320px;
+    }
+
+    .color{
+      background-color: #990099;
+      color: #FFFFFF;
+    }
+  
+     .navbar-brand {
+      display: block;
+      /* width: 100%; */
+      justify-content:center;
+    }
+  
+    .is-center {
+      justify-content:center;
+    }
+  }

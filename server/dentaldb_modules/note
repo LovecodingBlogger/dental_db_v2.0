@@ -1,0 +1,101 @@
+WITH jar AS (
+    SELECT
+    MAX("ID") AS id
+    FROM "DoctorSchedule"
+)
+INSERT INTO public."DoctorScheduleDetail"(
+	"Date", "DoctorScheduleID")
+	VALUES ('1', (SELECT id FROM jar));
+
+
+SELECT * FROM "DoctorSchedule" WHERE
+'2020-02-29' BETWEEN "StartDate" AND "EndDate"
+AND "Day"='Sunday' AND "DoctorCode"='0113662'
+
+
+SELECT 
+"DoctorCode",SUM(split_part(("TimeEnd"::time - "TimeStart"::time)::text,':',1)::int*60 +
+split_part(("TimeEnd"::time - "TimeStart"::time)::text,':',2)::int)
+FROM "DoctorSchedule" WHERE
+'2020-02-29' BETWEEN "StartDate" AND "EndDate"
+AND "Day"='Sunday' AND "DoctorCode"='0113662' GROUP BY "DoctorCode"
+
+
+SELECT 
+"DoctorSchedule"."DoctorCode",
+SUM(split_part(("DoctorSchedule"."TimeEnd"::time - "DoctorSchedule"."TimeStart"::time)::text,':',1)::int*60 +
+split_part(("DoctorSchedule"."TimeEnd"::time - "DoctorSchedule"."TimeStart"::time)::text,':',2)::int)
+FROM "DoctorSchedule" 
+INNER JOIN "RoomDetail" ON "RoomDetail"."CarpCode"="DoctorSchedule"."DoctorCode"
+WHERE '2020-02-01' BETWEEN "StartDate" AND "EndDate"
+AND "DoctorSchedule"."Day"='Sunday' AND "RoomDetail"."CarpStatus"='In' GROUP BY "DoctorSchedule"."DoctorCode"
+
+
+SELECT SUM("Service"."BDMSTimeInMinute"::int)
+FROM "RoomDetail" INNER JOIN "PatientAppointment"
+ON "RoomDetail"."CarpCode" = "PatientAppointment"."CarpCode"
+INNER JOIN "Service" 
+ON "Service"."BDMSItemCode"="PatientAppointment"."ServiceCode"
+WHERE split_part("PatientAppointment"."AS_SessStartTime",':',2)!='04' AND 
+split_part("PatientAppointment"."AS_SessStartTime",':',2)!='09' GROUP BY "RoomDetail"."CarpCode"
+
+
+
+SELECT 
+"DoctorSchedule"."TimeStart",
+"DoctorSchedule"."TimeEnd",
+SUM("Service"."BDMSTimeInMinute"::int),
+SUM(split_part(("DoctorSchedule"."TimeEnd"::time - "DoctorSchedule"."TimeStart"::time)::text,':',1)::int*60 +
+split_part(("DoctorSchedule"."TimeEnd"::time - "DoctorSchedule"."TimeStart"::time)::text,':',2)::int)
+FROM "RoomDetail"
+INNER JOIN "DoctorSchedule" 
+ON "RoomDetail"."CarpCode"="DoctorSchedule"."DoctorCode"
+INNER JOIN "PatientAppointment"
+ON "RoomDetail"."CarpCode"="PatientAppointment"."CarpCode"
+INNER JOIN "Service"
+ON "Service"."BDMSItemCode"="PatientAppointment"."ServiceCode"
+WHERE '2020-02-01' BETWEEN "StartDate" AND "EndDate"
+AND "DoctorSchedule"."Day"='Tuesday' AND "RoomDetail"."CarpStatus"='In'
+GROUP BY "DoctorSchedule"."TimeStart","DoctorSchedule"."TimeEnd"
+
+
+SELECT 
+"DoctorCode",SUM(split_part(("TimeEnd"::time - "TimeStart"::time)::text,':',1)::int*60 +
+split_part(("TimeEnd"::time - "TimeStart"::time)::text,':',2)::int)
+FROM "DoctorSchedule" WHERE
+'2020-02-29' BETWEEN "StartDate" AND "EndDate"
+AND "Day"='Tuesday' AND "DoctorCode"='0108149' GROUP BY "DoctorCode"
+
+
+SELECT "RoomDetail"."CarpCode",SUM("Service"."BDMSTimeInMinute"::int)
+FROM "RoomDetail" INNER JOIN "PatientAppointment"
+ON "RoomDetail"."CarpCode" = "PatientAppointment"."CarpCode"
+INNER JOIN "Service" 
+ON "Service"."BDMSItemCode"="PatientAppointment"."ServiceCode"
+GROUP BY "RoomDetail"."CarpCode"
+
+
+****ใช้ Set State และ Change Props
+
+
+WITH "DoctorSch" AS (
+    SELECT 
+	"DoctorCode",SUM(split_part(("TimeEnd"::time - "TimeStart"::time)::text,':',1)::int*60 +
+	split_part(("TimeEnd"::time - "TimeStart"::time)::text,':',2)::int) AS "SUMSLOT"
+	FROM "DoctorSchedule" WHERE
+	'2020-02-29' BETWEEN "StartDate" AND "EndDate"
+	AND "Day"='Tuesday' AND "DoctorCode"='0108149' GROUP BY "DoctorCode"
+)
+SELECT "RoomDetail"."CarpCode",
+"DoctorSch"."SUMSLOT",
+SUM("Service"."BDMSTimeInMinute"::int),
+SUM("Service"."BDMSTimeInMinute"::int)::float/"DoctorSch"."SUMSLOT"::float AS "CarpCodeTser"
+FROM "RoomDetail" INNER JOIN "PatientAppointment"
+ON "RoomDetail"."CarpCode" = "PatientAppointment"."CarpCode"
+INNER JOIN "Service" ON "Service"."BDMSItemCode"="PatientAppointment"."ServiceCode"
+INNER JOIN "DoctorSch" ON "RoomDetail"."CarpCode"="DoctorSch"."DoctorCode"
+WHERE split_part("PatientAppointment"."AS_SessStartTime",':',2)!='04' AND 
+split_part("PatientAppointment"."AS_SessStartTime",':',2)!='09'
+GROUP BY "RoomDetail"."CarpCode","DoctorSch"."SUMSLOT"
+
+https://github.com/ant-design/ant-design/blob/master/components/popover/style/index.less

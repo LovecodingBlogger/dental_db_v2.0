@@ -1,0 +1,66 @@
+.background {  
+    align-items: center;
+    justify-content: center;
+    /* background-image: linear-gradient(to bottom right, #1C597F, #84D0FF);  */
+
+}
+/*https://ant.design/components/tooltip/#API
+https://stackoverflow.com/questions/55760245/how-to-change-the-text-color-and-background-color-of-ant-tooltip-component
+*/
+.ant-popover-inner{
+    background-color: #990099;
+}
+.ant-popover-inner-content{
+    color: #fff;
+}
+.ant-popover-placement-bottom .ant-popover-arrow, 
+.ant-popover-placement-bottomLeft .ant-popover-arrow, 
+.ant-popover-placement-bottomRight .ant-popover-arrow,
+.ant-popover-placement-top .ant-popover-arrow, 
+.ant-popover-placement-topLeft .ant-popover-arrow, 
+.ant-popover-placement-topRight .ant-popover-arrow {
+    background-color: #990099;
+}
+
+.default {
+    background-color:#d9b3ff;
+}
+.popover {
+    background: #990099;
+}
+.row:nth-of-type(odd) {
+  background-color: #d9b3ff;
+}
+
+.div-square {
+    width: 90px;
+}
+.square {
+    height: 20px;
+    width: 20px;
+    background-color: #555;
+}
+.empty {
+    border-style: groove;
+    border-color: #000000;
+    background-color: #FFFFFF;
+}
+.noPatient {
+    background-color: #ff33cc;
+}
+.avaliable {
+    background-color: #44bb80;
+}
+.SomeAppointment {
+    background-color: #ffcc00;
+}
+.FullAppointment {
+    background-color: #ff751a;
+}
+.Overbooking {
+    background-color: #da0b2a;
+}
+
+
+
+

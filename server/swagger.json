@@ -1,0 +1,374 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "`DevelopBy: Kitsana Panja MSC`",
+    "version": "1.1.0",
+    "title": "Dental Dashboard",
+    "contact": {
+      "email": "kitsapan@metrosystems.co.th"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "localhost:8080",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Room Detail",
+      "description": "Operations room detials."
+    },
+    {
+      "name": "Patient Appointment",
+      "description": "Operations patient appointments."
+    },
+    {
+      "name": "Patient Status",
+      "description": "Operations update status patient appointments."
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/roomDetail": {
+      "post": {
+        "tags": [
+          "Room Detail"
+        ],
+        "summary": "Add and update room details.",
+        "description": "",
+        "operationId": "addRoomDetail",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Room detail object that needs to be added",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/roomDetail"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "502": {
+            "description": "Bad Gateway"
+          },
+          "503": {
+            "description": "Server Unavailable"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Room Detail"
+        ],
+        "summary": "Get data room details.",
+        "description": "Get all data room details.",
+        "operationId": "getRoomDetail",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "502": {
+            "description": "Bad Gateway"
+          },
+          "503": {
+            "description": "Server Unavailable"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Room Detail"
+        ],
+        "summary": "Delete room details.",
+        "description": "",
+        "operationId": "deleteRoomDetail",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "502": {
+            "description": "Bad Gateway"
+          },
+          "503": {
+            "description": "Server Unavailable"
+          }
+        }
+      }
+    },
+    "/patientAppointment": {
+      "get": {
+        "tags": [
+          "Patient Appointment"
+        ],
+        "summary": "Get patient appointments.",
+        "description": "Get all data patient appointments.",
+        "operationId": "getPatientAppointment",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "502": {
+            "description": "Bad Gateway"
+          },
+          "503": {
+            "description": "Server Unavailable"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Patient Appointment"
+        ],
+        "summary": "Delete patient appointments.",
+        "description": "",
+        "operationId": "deletePatientAppointment",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "502": {
+            "description": "Bad Gateway"
+          },
+          "503": {
+            "description": "Server Unavailable"
+          }
+        }
+      }
+    },
+    "/patientStatus": {
+      "post": {
+        "tags": [
+          "Patient Status"
+        ],
+        "summary": "Update status patient appointment.",
+        "description": "",
+        "operationId": "addpatientStatus",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Patient status object that needs to be update",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/patientStatus"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "502": {
+            "description": "Bad Gateway"
+          },
+          "503": {
+            "description": "Server Unavailable"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "roomDetail": {
+      "type": "object",
+      "required": [
+        "TransectionId",
+        "ResourceId",
+        "Resource",
+        "Room",
+        "AssistantId",
+        "Assistant",
+        "ScheduleTime",
+        "Location"
+      ],
+      "properties": {
+        "TransectionId": {
+          "type": "string",
+          "example": "1"
+        },
+        "ResourceId": {
+          "type": "string",
+          "example": "0108149"
+        },
+        "Resource": {
+          "type": "string",
+          "example": "KULAYA RATANAPRIDAKUL,D.D.S."
+        },
+        "Room": {
+          "type": "string",
+          "example": "1",
+          "description": "Please enter room no. 1-12,14-30 or 'Out'"
+        },
+        "AssistantId": {
+          "type": "string",
+          "example": "01000674"
+        },
+        "Assistant": {
+          "type": "string",
+          "example": "ปัญจมา  บัวแก้ว"
+        },
+        "ScheduleTime": {
+          "type": "string",
+          "example": "08:00-20:00"
+        },
+        "Location": {
+          "type": "string",
+          "example": "01DEN"
+        }
+      },
+      "xml": {
+        "name": "roomDetail"
+      }
+    },
+    "patientStatus": {
+      "type": "object",
+      "required": [
+        "TransactionId",
+        "PatientId",
+        "EpisodeNumber",
+        "Room",
+        "PatientStatus",
+        "Location"
+      ],
+      "properties": {
+        "TransactionId": {
+          "type": "string",
+          "example": "1"
+        },
+        "PatientId": {
+          "type": "string",
+          "example": "01-17-064203"
+        },
+        "EpisodeNumber": {
+          "type": "string",
+          "example": "O01-20-0000114"
+        },
+        "Room": {
+          "type": "string",
+          "example": "1"
+        },
+        "PatientStatus": {
+          "type": "string",
+          "example": "Call, Hold and End Service"
+        },
+        "Location": {
+          "type": "string",
+          "example": "01DEN"
+        }
+      },
+      "xml": {
+        "name": "patientStatus"
+      }
+    },
+    "Response": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "status": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}

@@ -1,0 +1,217 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+}
+
+svg {
+  margin: 0.5em;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.navbar-item {
+  font-weight: 700;
+}
+
+.hero {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.title,
+.page-title {
+	font-weight: 700;
+	margin-bottom: 1rem;
+}
+    .lable{
+        -webkit-border-radius: 10px;
+        display: flex;
+        border-radius: 10px;
+        font-size: 10px;
+        display: inline-block;
+        margin: 4px 2px;
+    }
+
+    .lable-empty{    	
+        background-color: rgb(255, 255, 255);
+        color: #000000;
+    }
+    .lable-NoPatient{    	
+        background-color:#cc00cc;
+    }
+    .lable-Avaliable{    	
+        background-color: #44bb80;
+    }
+    .lable-SomeAppointment{    	
+        background-color: #F7B733; 
+    }
+    .lable-FullAppointment{    	
+        background-color: #fc6136;
+    }
+    .lable-Overbooking{    	
+        background-color: #da0b2a;
+    }
+
+
+    .panel-heading {
+        color: rgb(43, 44, 44);
+        background-color: #f7d9b3;
+        border-color: rgb(255, 255, 255);
+      }
+      .panel-block {
+            border-color: rgb(255, 255, 255);
+            
+      }
+
+    .buttonDashboard {        
+        background-color: #cdcdcd;
+        -webkit-border-radius: 10px;
+        display: flex;
+        border-radius: 10px;
+        border: none;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: inline-block;
+        font-family: Arial;
+        font-size: 20px;
+        padding: 1px 10px;
+        text-decoration: none;
+        margin: 4px 2px;
+        transition: 0.3s;
+        min-width: 75px;
+        min-height: 65px;
+        justify-content: center;
+    }
+    .t-empty{    	
+        background-color: #FFFFFF;
+        color:#000000;
+        font-size: 0.95em;
+        border:solid;
+        border-color: black;
+        border-width: 0.5px;
+    }
+    .t-empty:hover{    	
+        background-color: #a6a6a6;
+    }
+    .t-empty:focus{    	
+        background-color: #a6a6a6;
+    }
+    .t-NoPatient{    	
+        background-color:#ff33cc;
+        font-size: 0.95em;
+        color:#FFFFFF;
+    }
+    .t-NoPatient:hover{
+        background-color:#772277;
+    }
+    .t-NoPatient:focus{
+        background-color:#772277;
+    }
+    .t-avaliable{    	
+        background-color: #44bb80;
+        font-size: 0.95em;
+        color:#FFFFFF;
+    }
+    .t-avaliable:hover{    	
+        background-color: #369666;
+    }
+    .t-avaliable:focus{    	
+        background-color: #369666;
+    }
+    .t-SomeAppointment{    	
+        background-color: #ffcc00;
+        font-size: 0.95em;
+        color:#FFFFFF;
+    }
+    .t-SomeAppointment:hover{    	
+        background-color: #dc9609;
+    }
+    .t-SomeAppointment:focus{    	
+        background-color: #dc9609;
+
+    }
+    .t-FullAppointment{    	
+        background-color: #ff751a;
+        font-size: 0.95em;
+        color:#FFFFFF;
+    }
+    .t-FullAppointment:hover{    	
+        background-color: #b34700;
+    }
+    .t-FullAppointment:focus{    	
+        background-color: #b34700;
+    }
+    .t-Overbooking{    	
+        background-color: #da0b2a;
+        font-size: 0.95em;
+        color:#FFFFFF;
+    }
+    .t-Overbooking:hover{    	
+        background-color: #91081c;
+    }
+    .t-Overbooking:focus{    	
+        background-color: #91081c;
+    }
+
+ .buttonflashing {        
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Arial;
+    font-size: 0.95em;
+    padding: 1px 10px;
+    margin: 4px 2px;
+    transition: 0.3s;
+    text-align: center;
+    text-decoration: none;
+    min-width: 75px;
+    min-height: 65px;
+    -webkit-animation: glowing 1000ms infinite;
+    -moz-animation: glowing 1500ms infinite;
+    -o-animation: glowing 1000ms infinite;
+    animation: glowing 1500ms infinite;
+}
+@-webkit-keyframes glowing {
+  0% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; -webkit-box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+}
+
+@-moz-keyframes glowing {
+  0% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; -moz-box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+}
+
+@-o-keyframes glowing {
+  0% { background-color: #B20000; -o-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; -o-box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; -o-box-shadow: 0 0 3px #B20000; }
+}
+
+@keyframes glowing {
+  0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+}
+
+.blink {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+
+
+
+

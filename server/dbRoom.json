@@ -1,0 +1,155 @@
+{
+	"room" : [
+		{
+			"id"	 : "1",
+			"status" : "button-status empty",
+          	"noti"   : "button big-btn",
+          	"triger" : "1"
+		},{
+			"id"	 : "2",
+			"status" : "button-status NoPatient",
+          	"noti"   : "button big-btn",
+          	"triger" : "1"
+		},{
+			"id"	 : "3",
+			"status" : "button-status avaliable",
+          	"noti"   : "button big-btn",
+          	"triger" : "1"
+		},{
+			"id"	 : "4",
+			"status" : "button-status SomeAppointment",
+          	"noti"   : "button big-btn",
+          	"triger" : "1"
+		},{
+			"id"	 : "5",
+			"status" : "button-status FullAppointment",
+          	"noti"   : "button big-btn",
+          	"triger" : "1"
+		},{
+			"id"	 : "6",
+			"status" : "button-status Overbooking",
+          	"noti"   : "button big-btn",
+          	"triger" : "1"
+		},{
+			"id"	 : "7",
+			"status" : "button-status empty",
+          	"noti"   : "button big-btn",
+          	"triger" : "1"
+		},{
+			"id"	 : "8",
+			"status" : "button-status empty",
+          	"noti"   : "button big-btn",
+          	"triger" : "1"
+		},{
+			"id"	 : "9",
+			"status" : "button-status empty",
+          	"noti"   : "buttonflashing",
+          	"triger" : "1"
+		},{
+			"id"	 : "10",
+			"status" : "button-status empty",
+          	"noti"   : "button big-btn",
+          	"triger" : "1"
+		},{
+			"id"	 : "11",
+			"status" : "button-status empty",
+          	"noti"   : "button big-btn",
+          	"triger" : "1"
+		},{
+			"id"	 : "12",
+			"status" : "button-status empty",
+          	"noti"   : "button big-btn",
+          	"triger" : "1"
+		},{
+			"id"	 : "13",
+			"status" : "button-status empty",
+          	"noti"   : "button big-btn",
+          	"triger" : "1"
+		},{
+			"id"	 : "14",
+			"status" : "button-status empty",
+          	"noti"   : "button big-btn",
+          	"triger" : "1"
+		},{
+			"id"	 : "15",
+			"status" : "button-status empty",
+          	"noti"   : "buttonflashing",
+          	"triger" : "1"
+		},{
+			"id"	 : "16",
+			"status" : "button-status empty",
+          	"noti"   : "button big-btn",
+          	"triger" : "1"
+		},{
+			"id"	 : "17",
+			"status" : "button-status empty",
+          	"noti"   : "button big-btn",
+          	"triger" : "1"
+		},{
+			"id"	 : "18",
+			"status" : "button-status empty",
+          	"noti"   : "button big-btn",
+          	"triger" : "1"
+		},{
+			"id"	 : "19",
+			"status" : "button-status empty",
+          	"noti"   : "button big-btn",
+          	"triger" : "1"
+		},{
+			"id"	 : "20",
+			"status" : "button-status empty",
+          	"noti"   : "button big-btn",
+          	"triger" : "1"
+		},{
+			"id"	 : "21",
+			"status" : "button-status empty",
+          	"noti"   : "button big-btn",
+          	"triger" : "1"
+		},{
+			"id"	 : "22",
+			"status" : "button-status empty",
+          	"noti"   : "button big-btn",
+          	"triger" : "1"
+		},{
+			"id"	 : "23",
+			"status" : "button-status empty",
+          	"noti"   : "button big-btn",
+          	"triger" : "1"
+		},{
+			"id"	 : "24",
+			"status" : "button-status empty",
+          	"noti"   : "button big-btn",
+          	"triger" : "1"
+		},{
+			"id"	 : "25",
+			"status" : "button-status empty",
+          	"noti"   : "button big-btn",
+          	"triger" : "1"
+		},{
+			"id"	 : "26",
+			"status" : "button-status empty",
+          	"noti"   : "button big-btn",
+          	"triger" : "1"
+		},{
+			"id"	 : "27",
+			"status" : "button-status empty",
+          	"noti"   : "button big-btn",
+          	"triger" : "1"
+		},{
+			"id"	 : "28",
+			"status" : "button-status empty",
+          	"noti"   : "button big-btn",
+          	"triger" : "1"
+		},{
+			"id"	 : "29",
+			"status" : "button-status empty",
+          	"noti"   : "button big-btn",
+          	"triger" : "1"
+		},{
+			"id"	 : "30",
+			"status" : "button-status empty",
+          	"noti"   : "button big-btn",
+          	"triger" : "1"
+		}
+	]
+}
