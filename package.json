@@ -11,7 +11,7 @@
     "@wojtekmaj/react-daterange-picker": "^2.1.0",
     "antd": "^3.10.2",
     "autosuggest-highlight": "^3.1.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "axios-delay": "^1.0.0-rc6",
     "body-parser-xml": "^1.1.0",
     "bootstrap": "^4.1.3",
